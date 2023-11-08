@@ -1,0 +1,24 @@
+{% extends "base.html" %}{% block content %}
+<div class="container">
+	<div
+		class="row justify-content-center align-items-center"
+		style="height: 80vh"
+	>
+		<h1>Dashboard of {{username}}</h1>
+		<a href="{% url 'logout' %}">Logout</a>
+		<ul>
+			{% for item in data %}
+			<li>Creator = {{item.creator}}</li>
+			<li>Title = {{item.title}}</li>
+			<li>Intro = {{item.intro}}</li>
+			<li>Content = {{item.body}}</li>
+			<li>Date = {{item.date_added}}</li>
+		</br>
+			
+			{% endfor%}
+		</ul>
+
+		<div id="news-container"></div>
+	</div>
+</div>
+{% endblock %}

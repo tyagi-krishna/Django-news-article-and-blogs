@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% block content %}
+<div class="container">
+	<div
+		class="row justify-content-center align-items-center"
+		style="height: 80vh"
+	>
+		<h1>Dashboard of {{username}}</h1>
+		<form action="" method="post" style="margin-left: 3cm">
+			<a href="{% url 'logout' %}">Logout</a>
+			{% csrf_token %}
+			<p>Enter Title:</p>
+			<input id="title" name="title" type="text" placeholder="Title" />
+			<p>Enter Intro:</p>
+			<input id="intro" name="intro" type="text" placeholder="Intro" />
+			<p>Enter Content:</p>
+			<input id="body" name="body" type="text" placeholder="Content" />
+			<input id="submit" type="submit" value="Add Blog" />
+		</form>
+	</div>
+</div>
+{% endblock %}
